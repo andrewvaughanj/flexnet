@@ -11,7 +11,7 @@ import calendar
 import binascii
 import re
 import copy
-import pycrc
+import pycrc.algorithms as pycrc
 
 import flexnet.file
 
@@ -327,7 +327,11 @@ class ManagerClient(_Client):
         self.query_server_license_file_contents()
         self.query_vendor_list()
         # Connect to each vendor port for full details
-        self.query_vendor_details()
+
+        #
+        # TODO: this doesn't work
+        #
+        # self.query_vendor_details()
 
     def report_everything(self):
         """Query everything and print results to standard output"""
